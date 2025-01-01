@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # In the future, this will run etcd or our own storage
+  # storage:
+  #   image: dwarf/badger-cli
+  #   command: ...
+
+  # Simulating a 3-node cluster for local dev
+  node-1:
+    image: golang:1.23-alpine
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: tail -f /dev/null
+    networks:
+      - k8s-lite-net
+
+  node-2:
+    image: golang:1.23-alpine
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: tail -f /dev/null
+    networks:
+      - k8s-lite-net
+
+  node-3:
+    image: golang:1.23-alpine
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: tail -f /dev/null
+    networks:
+      - k8s-lite-net
+
+networks:
+  k8s-lite-net:
+    driver: bridge

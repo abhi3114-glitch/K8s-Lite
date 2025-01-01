@@ -1,0 +1,23 @@
+# Binaries
+bin/
+*.exe
+*.dll
+
+# Certificates
+*.pem
+*.key
+*.csr
+*.crt
+*.pfx
+
+# Logs
+*.log
+
+# Database
+k8s-lite.db
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
